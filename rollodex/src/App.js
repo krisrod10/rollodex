@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useEffect, useState } from "react";
+import Contacts from "./components/Contacts";
+
+
+
+
+
+
+const API_URL = 'https://randomuser.me/api?results=25';
+
+// use fetch API
+// use lifecycle method = useEffect
 
 function App() {
+  const [contacts, setContacts] = useState([])
+
+  useEffect(() => {
+    console.log("I mounted");
+    //use fetch API 
+    fetch(API_URL)
+      .then(response => response.json())
+      .then(data => setContacts(data.results));
+  }, []);
+
+  // useEffect(() => {
+  //   console.log("I Updated");
+  //   console.log(contacts);
+  // }, [contacts]);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Contacts contacts={contacts} />
+
     </div>
   );
 }
