@@ -1,11 +1,12 @@
 import React from 'react'
+import onClick from './Button';
 
 
 {/** Dont forget to set up state */}
-const [state, setState ] = useState({
 
-})
 export default function Contact(props) {
+
+    
     const name = `${props.contact.name.first} ${props.contact.name.last}`;
     console.log(props.contact);
     console.log(props.contacts);
