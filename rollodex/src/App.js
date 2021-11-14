@@ -13,6 +13,7 @@ const API_URL = 'https://randomuser.me/api?results=25';
 // use lifecycle method = useEffect
 
 function App() {
+  
   const [contacts, setContacts] = useState([])
 
   useEffect(() => {
@@ -23,6 +24,7 @@ function App() {
       .then(data => setContacts(data.results));
   }, []);
 
+
   // useEffect(() => {
   //   console.log("I Updated");
   //   console.log(contacts);
@@ -32,6 +34,7 @@ function App() {
   return (
     <div className="App">
       <Contacts contacts={contacts} />
+      
 
     </div>
   );
