@@ -1,18 +1,18 @@
 import React from 'react'
 
 
-const handleClick = () => {
-this.setState({
-    button:this.contact.cell
-})
-}
+
 
 
 {/** Dont forget to set up state */}
 
 
 export default function Contact(props) {
-   
+   let handleClick = (event) => {
+        return(
+            <li>{}</li>
+        )
+        }
     
    const name = `${props.contact.name.first} ${props.contact.name.last}`;
     console.log(props.contact);
@@ -24,7 +24,7 @@ export default function Contact(props) {
             <li>{props.contact.email}</li>
             {/**Conditionally render text based on state  */}
             {/** Dont forget to wire up event handler */}
-            <button button={handleClick}>Show Info</button>
+            <button onClick = {handleClick}>Show Info</button>
 
             
 
