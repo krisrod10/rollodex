@@ -3,6 +3,8 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import Slider from '@mui/material/Slider';
+
 
 
 
@@ -27,6 +29,7 @@ export default function BasicCard({isOnline, setIsOnline, title, body}) {
             </CardContent>
             <CardActions>
             <Switch {...label} checked={isOnline} onChange={handleChange} />
+            <Slider disabled defaultValue={30} aria-label="Disabled slider" />
             </CardActions>
         </Card>
     );
